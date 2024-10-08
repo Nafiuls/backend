@@ -12,7 +12,7 @@
       "dest": "index.js",
       "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
       "headers": {
-        "Access-Control-Allow-Origin": "*"
+        "Access-Control-Allow-Origin": "https://auth-project-770fb.web.app"
       }
     }
   ]
