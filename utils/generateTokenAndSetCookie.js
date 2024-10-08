@@ -6,8 +6,8 @@ export const generateTokenAndSetCookie = async (res, userId) => {
 
   res.cookie('token', token, {
     httpOnly: true,
-    secure: true, // Use true if your site is HTTPS
-    sameSite: 'none',
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
   });
   return token;
 };
