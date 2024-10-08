@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 const corsOptions = {
   origin: ['https://auth-project-770fb.web.app', 'http://localhost:5173'],
   credentials: true, // Enable sending cookies with requests
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // List the methods you're using// Include any custom headers
+  // List the methods you're using// Include any custom headers
 };
 
 // middlewares
