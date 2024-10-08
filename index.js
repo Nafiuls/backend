@@ -11,7 +11,10 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 const corsOptions = {
-  origin: ['https://auth-project-770fb.web.app'],
+  origin: [
+    'https://auth-project-770fb.web.app/api/auth',
+    'http://localhost:5173',
+  ],
   credentials: true, // Enable sending cookies with requests
   // List the methods you're using// Include any custom headers
 };
