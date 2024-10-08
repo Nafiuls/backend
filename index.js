@@ -19,9 +19,16 @@ const PORT = process.env.PORT || 5000;
 // middlewares
 app.use(
   cors({
-    origin: ['https://auth-project-770fb.web.app'],
+    origin: [
+      'https://auth-project-770fb.web.app',
+      'http://localhost:5173',
+      'https://auth-project-770fb.firebaseapp.com',
+    ],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    exposedHeaders: ['Authorization'],
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
   })
 );
 app.use(express.json());
