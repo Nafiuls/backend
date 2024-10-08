@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import {
   forgotPassword,
   login,
@@ -11,6 +12,14 @@ import {
 import { verifyToken } from '../middleware/verifyToken.js';
 
 const router = express.Router();
+
+const corsOptions = {
+  origin: ['https://auth-project-770fb.web.app'],
+  credentials: true, // Enable sending cookies with requests
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // List the methods you're using// Include any custom headers
+};
+
+router.use(cors(corsOptions));
 
 // check-auth
 router.get('/check-auth', verifyToken, checkAuth);
