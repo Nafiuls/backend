@@ -26,9 +26,6 @@ app.use(
     ],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    exposedHeaders: ['Authorization'],
-    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
   })
 );
 app.use(express.json());
