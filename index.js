@@ -17,6 +17,7 @@ const corsOptions = {
   ],
   credentials: true, // Enable sending cookies with requests
   // List the methods you're using// Include any custom headers
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // List the methods you're using// Include any custom headers
 };
 
 // middlewares
