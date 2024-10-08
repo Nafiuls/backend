@@ -1,6 +1,7 @@
 import { User } from '../models/user.model.js';
 import bcrypt from 'bcryptjs';
 import crypto from 'crypto';
+import cors from 'cors';
 import { generateVerificationCode } from '../utils/generateVerificationCode.js';
 import { generateTokenAndSetCookie } from '../utils/generateTokenAndSetCookie.js';
 import {
@@ -9,6 +10,14 @@ import {
   sendVerificationEmail,
   sendWelcomeEmail,
 } from '../mailtrap/emails.js';
+
+const corsOptions = {
+  origin: ['https://auth-project-770fb.web.app'],
+  credentials: true, // Enable sending cookies with requests
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // List the methods you're using// Include any custom headers
+};
+
+app.use(cors(corsOptions));
 
 export const signup = async (req, res) => {
   const { email, password, name } = req.body;
