@@ -18,6 +18,7 @@ const corsOptions = {
 
 // middlewares
 app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 app.use(express.json()); //this will allow us to parese the incoming request with json payload (req.body)
 app.use(cookieParser());
 app.get('/', (req, res) => {
